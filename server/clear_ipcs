@@ -1,0 +1,4 @@
+for i in m s q
+do
+  ipcs -$i|awk '/^[0-9]/{ c=sprintf("ipcrm -'$i' %d",$2);system(c); }' 
+done
